@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 98%; /* #FAFAFA */
+  --foreground: 0 0% 6%; /* #101010 */
+  --muted: 0 0% 95%; /* #F1F1F1 */
+  --muted-foreground: 0 0% 59%; /* #979797 */
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 6%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 6%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --primary: 22 65% 57%; /* #D87D4A */
+  --primary-foreground: 22 100% 97%;
+  --secondary: 0 0% 95%;
+  --secondary-foreground: 0 0% 10%;
+  --accent: 0 0% 95%;
+  --accent-foreground: 0 0% 10%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 22 65% 57%;
+  --radius: 0.5rem;
+  
+  /* Custom Audiophile colors */
+  --dark: 0 0% 10%; /* #191919 */
+  --darker: 0 0% 6%; /* #101010 */
+  --orange: 22 65% 57%; /* #D87D4A */
+  --orange-hover: 22 100% 76%; /* #FBAF85 */
+  --light-gray: 0 0% 95%; /* #F1F1F1 */
+  --medium-gray: 0 0% 59%; /* #979797 */
+  --off-white: 0 0% 98%; /* #FAFAFA */
+}
+
+.dark {
+  --background: 0 0% 6%;
+  --foreground: 0 0% 98%;
+  --muted: 0 0% 16%;
+  --muted-foreground: 0 0% 65%;
+  --popover: 0 0% 6%;
+  --popover-foreground: 0 0% 98%;
+  --card: 0 0% 6%;
+  --card-foreground: 0 0% 98%;
+  --border: 0 0% 16%;
+  --input: 0 0% 16%;
+  --primary: 22 65% 57%;
+  --primary-foreground: 22 100% 97%;
+  --secondary: 0 0% 16%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 0 0% 16%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62% 31%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 0 0% 84%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .bg-dark {
+    background-color: hsl(var(--dark));
+  }
+  
+  .bg-darker {
+    background-color: hsl(var(--darker));
+  }
+  
+  .bg-orange {
+    background-color: hsl(var(--orange));
+  }
+  
+  .bg-orange-hover {
+    background-color: hsl(var(--orange-hover));
+  }
+  
+  .bg-light-gray {
+    background-color: hsl(var(--light-gray));
+  }
+  
+  .bg-off-white {
+    background-color: hsl(var(--off-white));
+  }
+  
+  .text-dark {
+    color: hsl(var(--dark));
+  }
+  
+  .text-darker {
+    color: hsl(var(--darker));
+  }
+  
+  .text-orange {
+    color: hsl(var(--orange));
+  }
+  
+  .text-medium-gray {
+    color: hsl(var(--medium-gray));
+  }
+  
+  .hover\:bg-orange-hover:hover {
+    background-color: hsl(var(--orange-hover));
+  }
+  
+  .hover\:text-orange:hover {
+    color: hsl(var(--orange));
+  }
+  
+  .border-orange {
+    border-color: hsl(var(--orange));
+  }
+  
+  .focus\:border-orange:focus {
+    border-color: hsl(var(--orange));
+  }
+}
+
+/* Custom font import */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
