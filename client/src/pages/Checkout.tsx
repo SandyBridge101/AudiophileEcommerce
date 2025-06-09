@@ -367,38 +367,40 @@ export default function Checkout() {
             </h2>
             <p className="text-medium-gray mb-8">You will receive an email confirmation shortly.</p>
             
-            <div className="bg-light-gray rounded-lg p-6 mb-8">
-              {items.length > 0 && (
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-4">
-                      <img 
-                        src={items[0].image} 
-                        alt={items[0].name} 
-                        className="w-12 h-12 object-cover rounded"
-                      />
-                      <div className="text-left">
-                        <h4 className="font-medium text-sm text-darker">{items[0].name}</h4>
-                        <p className="text-medium-gray text-sm">$ {items[0].price.toLocaleString()}</p>
+            <div className="rounded-lg overflow-hidden mb-8">
+              <div className="flex">
+                {/* Left side - Product info */}
+                <div className="bg-light-gray p-6 flex-1">
+                  {items.length > 0 && (
+                    <div>
+                      <div className="flex items-center space-x-4 mb-4">
+                        <img 
+                          src={items[0].image} 
+                          alt={items[0].name} 
+                          className="w-16 h-16 object-cover rounded"
+                        />
+                        <div className="flex-1">
+                          <h4 className="font-bold text-darker text-sm mb-1">{items[0].name}</h4>
+                          <p className="text-medium-gray text-sm font-bold">$ {items[0].price.toLocaleString()}</p>
+                        </div>
+                        <span className="font-bold text-medium-gray text-sm">x{items[0].quantity}</span>
                       </div>
-                    </div>
-                    <span className="font-medium text-darker">x{items[0].quantity}</span>
-                  </div>
-                  {items.length > 1 && (
-                    <div className="border-t pt-4">
-                      <p className="text-medium-gray text-sm">and {items.length - 1} other item(s)</p>
+                      {items.length > 1 && (
+                        <div className="border-t border-gray-300 pt-3">
+                          <p className="text-medium-gray text-sm font-bold">and {items.length - 1} other item(s)</p>
+                        </div>
+                      )}
                     </div>
                   )}
-                  <div className="border-t pt-4 mt-4">
-                    <div className="flex justify-between font-bold">
-                      <span className="text-darker">Grand Total</span>
-                      <span className="text-orange">$ {totals.grandTotal.toLocaleString()}</span>
-                    </div>
-                  </div>
                 </div>
-              )}
+                
+                {/* Right side - Grand total */}
+                <div className="bg-darker p-6 flex-1 flex flex-col justify-center">
+                  <p className="text-white opacity-50 text-sm mb-2 uppercase tracking-wider">Grand Total</p>
+                  <p className="text-white text-lg font-bold">$ {totals.grandTotal.toLocaleString()}</p>
+                </div>
+              </div>
             </div>
-            
             <Button 
               className="w-full bg-orange hover:bg-orange-hover text-white py-4 text-sm font-medium tracking-wider uppercase"
               onClick={handleConfirmationClose}

@@ -13,17 +13,17 @@ export default function Home() {
     {
       name: "Headphones",
       href: "/category/headphones",
-      image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200"
+      image: "/assets/product-xx99-mark-one-headphones/desktop/image-product.jpg"
     },
     {
       name: "Speakers", 
       href: "/category/speakers",
-      image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200"
+      image: "/assets/product-zx9-speaker/desktop/image-product.jpg"
     },
     {
       name: "Earphones",
       href: "/category/earphones", 
-      image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200"
+      image: "/assets/product-yx1-earphones/desktop/image-product.jpg"
     }
   ];
 
@@ -43,7 +43,15 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-darker">
+      <section className="bg-darker"
+      style={{
+        backgroundImage: `url('./assets/home/desktop/image-hero.jpg')`,
+        backgroundSize: 'cover',
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: 'center center',
+        
+      }}
+      >
         <div className="max-w-6xl mx-auto px-6 py-24 lg:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
@@ -62,13 +70,6 @@ export default function Home() {
                 </Link>
               )}
             </div>
-            <div className="flex justify-center">
-              <img 
-                src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                alt="XX99 Mark II Headphones" 
-                className="w-80 h-80 object-contain"
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -79,12 +80,18 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {categories.map((category) => (
               <Link key={category.name} href={category.href}>
-                <Card className="text-center group cursor-pointer hover:shadow-lg transition-shadow duration-300 border-0 bg-light-gray">
+                <Card className="text-center group cursor-pointer hover:shadow-lg transition-shadow duration-300 border-0 bg-light-gray h-30">
                   <CardContent className="py-16 px-8">
                     <img 
                       src={category.image} 
                       alt={`Premium ${category.name}`} 
-                      className="w-48 h-32 object-contain mx-auto mb-6"
+                      className="w-40 h-60 object-contain mx-auto mb-6"
+                      style={{
+                        position: "relative",
+                        background:"transparent",
+                
+
+                      }}
                     />
                     <h3 className="text-xl font-bold mb-4 tracking-wider uppercase text-darker">
                       {category.name}
@@ -109,9 +116,10 @@ export default function Home() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-12 lg:p-24">
                 <div className="flex justify-center lg:justify-start">
                   <img 
-                    src={zx9Speaker.image} 
+                    src="/assets/product-zx9-speaker/desktop/image-product.jpg" 
                     alt="ZX9 Speaker" 
                     className="w-64 h-80 object-contain"
+
                   />
                 </div>
                 <div className="text-center lg:text-left">
@@ -137,7 +145,7 @@ export default function Home() {
               <div 
                 className="flex items-center justify-between p-12 lg:p-16 min-h-[320px]"
                 style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1545454675-3531b543be5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=400')`,
+                  backgroundImage: `url('./assets/home/desktop/image-speaker-zx7.jpg')`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'right',
                   backgroundBlendMode: 'overlay'
@@ -147,6 +155,11 @@ export default function Home() {
                   <h3 className="text-3xl font-bold mb-6 text-darker">ZX7 Speaker</h3>
                   <Link href={`/product/${zx7Speaker.slug}`}>
                     <Button 
+                    style={{
+                      backgroundColor:"transparent",
+                      border: "2px solid black"
+                    
+                    }}
                       variant="outline" 
                       className="border-2 border-darker hover:bg-darker hover:text-white px-8 py-3 text-sm font-medium tracking-wider uppercase text-darker"
                     >
@@ -163,7 +176,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="bg-light-gray rounded-lg overflow-hidden">
                 <img 
-                  src={yx1Earphones.image} 
+                  src="./assets/home/desktop/image-earphones-yx1.jpg" 
                   alt="YX1 Earphones" 
                   className="w-full h-80 object-cover"
                 />
@@ -174,6 +187,11 @@ export default function Home() {
                   <Button 
                     variant="outline"
                     className="border-2 border-darker hover:bg-darker hover:text-white px-8 py-3 text-sm font-medium tracking-wider uppercase self-start text-darker"
+                    style={{
+                      backgroundColor:"transparent",
+                      border: "2px solid black"
+                    
+                    }}
                   >
                     See Product
                   </Button>
@@ -190,7 +208,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
               <h2 className="text-3xl lg:text-4xl font-bold mb-8 leading-tight text-darker">
-                Bringing you the <span className="text-orange">best</span> audio gear
+                BRINGING YOU THE <span className="text-orange">BEST</span> AUDIO GEAR
               </h2>
               <p className="text-medium-gray text-base leading-relaxed mb-6">
                 Located at the heart of New York City, Audiophile is the premier store for high end headphones, 
@@ -204,7 +222,7 @@ export default function Home() {
             </div>
             <div className="order-1 lg:order-2">
               <img 
-                src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" 
+                src="/assets/shared/desktop/image-best-gear.jpg" 
                 alt="Person enjoying premium audio" 
                 className="rounded-lg w-full h-96 object-cover"
               />
