@@ -1,6 +1,6 @@
-# 🎧 Audiophile E-Commerce Landing Page
+# 🎧 Audiophile E-Commerce Page
 
-This is a responsive e-commerce landing page for **Audiophile**, a high-end audio gear retailer. It showcases premium headphones, speakers, and earphones using a modern, minimal, and engaging UI.
+This is a responsive e-commerce page for **Audiophile**, a high-end audio gear retailer. It showcases premium headphones, speakers, and earphones using a modern, minimal, and engaging UI.
 
 ![Preview](./preview.jpg)
 
