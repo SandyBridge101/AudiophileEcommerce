@@ -89,8 +89,6 @@ export default function Home() {
                       style={{
                         position: "relative",
                         background:"transparent",
-                
-
                       }}
                     />
                     <h3 className="text-xl font-bold mb-4 tracking-wider uppercase text-darker">
@@ -119,6 +117,9 @@ export default function Home() {
                     src="/assets/product-zx9-speaker/desktop/image-product.jpg" 
                     alt="ZX9 Speaker" 
                     className="w-64 h-80 object-contain"
+                    style={{
+                      background:"transparent",
+                    }}
 
                   />
                 </div>
